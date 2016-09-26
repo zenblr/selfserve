@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Timeli</title>
+  <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css">
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <div class="main" id="root">
+  </div>
+  <script src="/javascripts/sdk.js"></script>
+  <script type="text/javascript">
+
+(function($) {
+  var domain = "mateo.timeli-staging.com",
+    port = 443,
+    client = "f5195bd0-6b31-4212-8f82-9cc1ff7edc66",
+    secret = "Secret for Mateo",
+    username = "admin",
+    password = "()moonmoon",
+    redirect_uri = "http://fiddle.jshell.net",
+    scopes = "asset_admin";
+
+  $.ajax({
+    url: "https://" + domain + ":" + port + "/rest/auth/token",
+    headers: {
+      Accept: "application/json; charset=utf-8"
+    },
+    type: "post",
+    dataType: "text/plain",
+    data: {
+      grant_type: "password",
+      client_id: client,
+      client_secret: secret,
+      username: username,
+      password: password,
+      scope: scopes,
+      redirect_uri: redirect_uri
+    },
+    crossDomain: true,
+    complete: function(res, status) {
+      console.log(res.responseText, status);
+    }
+
+  });
+})($);
+
+</script>
+</body>
+
+</html>

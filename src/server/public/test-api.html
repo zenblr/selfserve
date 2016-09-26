@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Timeli</title>
+  <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css">
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <div class="main" id="root">
+  </div>
+  <script src="/javascripts/sdk.js"></script>
+  <script type="text/javascript">
+    (function(S) {
+      S.init($, {
+          // domain: "mateo.timeli.io",
+          domain: "mateo.timeli-staging.com",
+          port: 443,
+          https: true,
+          //client_token: "rV4Lv70x99FEZhUUGvtZYiuGFTewUE-V-aYRlq5HxZ8Qhs8kFTfG06q_euVnrnPBaTXhI9E7ru3ih481x32nDdow4SpKxjkm2s8gFHWrSaE"
+          client_token: "rV4Lv70x99FEZhUUGvtZYiuGFTewUE-V-aYRlq5HxZ9JBnmV6rgbeXdjWRp8yI1VzMX2jV89IYTxoGeQPltlEfU5_FTvESn3FP_-rRW2VMU"
+        },
+        function() {
+          // S.Asset.get('268f57da-13c2-4171-9773-2453283cd5e6', function(e, r) {
+          //   console.log(e, r);
+          // });
+
+
+          // S.Label.Group.getAssetAggregations('26e10836-9f78-494d-9368-852d460ab261,bf265de6-2cb8-4893-86d1-26423954c02c', function(e, r){
+          //   console.log('Got something back. '+JSON.stringify(r))
+          // })
+
+          //We send labels
+          // GE Label id bf265de6-2cb8-4893-86d1-26423954c02c
+          // Denver Label id 26e10836-9f78-494d-9368-852d460ab261
+          // Medium Label id c32cc0b8-37ff-44a8-b327-6d24251aa1bd
+          // Boulder Label id 63a2621b-bcd8-42d8-85cc-57ee052d5d5f
+
+          // S.Label.Group.getAssetAggregations('a6f7a726-b72a-4dbb-8c44-3a5444169801', function(e, r){
+          //   console.log('Got something back. '+JSON.stringify(r))
+          // })
+          S.Label.Group.getAssetAggregations('bf265de6-2cb8-4893-86d1-26423954c02c,63a2621b-bcd8-42d8-85cc-57ee052d5d5f', function(e, r){
+            console.log('Got something back. '+JSON.stringify(r))
+          })
+
+          // Label Group: City:Boulder,Company:GE a6f7a726-b72a-4dbb-8c44-3a5444169801
+          // S.Aggregation.get('labelgroup','9d7434fa-436c-4fa1-a9cf-a027395f4105', function(e,r){
+          //   console.log('Result '+JSON.stringify(r))
+          // })
+          // ===================================================================
+          // Denver Label 26e10836-9f78-494d-9368-852d460ab261
+          // S.Label.getAssetAggregations('26e10836-9f78-494d-9368-852d460ab261', function(e, r){
+          //   console.log('Got something back. '+JSON.stringify(r))
+          // })
+          //
+          // S.Label.Group.getAssets('a6f7a726-b72a-4dbb-8c44-3a5444169801', function(e, r){
+          //   S.Aggregation.get('asset', r[0].id, function(e,r2){
+          //     console.log('Mateo '+ JSON.stringify(r2))
+          //   })
+          // })
+          //
+          // S.Aggregation.get('label','63a2621b-bcd8-42d8-85cc-57ee052d5d5f', function(e,r){
+          //   console.log('Result '+JSON.stringify(r))
+          // })
+          //
+          //
+          // // Medium Label id c32cc0b8-37ff-44a8-b327-6d24251aa1bd
+          // S.Aggregation.get('labelgroup', '63a2621b-bcd8-42d8-85cc-57ee052d5d5f', function(e,r){
+          //     console.log(`Response:  ${JSON.stringify(r)}`)
+          // })
+
+          // S.Label.Group.get('63a2621b-bcd8-42d8-85cc-57ee052d5d5f,bf265de6-2cb8-4893-86d1-26423954c02c',function(e,r){
+          //   console.log('got '+JSON.stringify(r))
+          // })
+        });
+    })(APP.SDK);
+  </script>
+</body>
+
+</html>
